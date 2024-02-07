@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Delivery Time Prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="Delivery_person_Age" placeholder="Delivery Person Age" required="required" /><br>
+      <input type="text" name="Delivery_person_Ratings" placeholder="Delivery Person Ratings" required="required" /><br>
+      <input type="text" name="Vehicle_condition" placeholder="Vehicle Condition" required="required" /><br>
+      <input type="text" name="multiple_deliveries" placeholder="Multiple Deliveries" required="required" /><br>
+      <input type="text" name="TimeOrder_Hour" placeholder="Time Order Hour" required="required" /><br>
+      <input type="text" name="distance" placeholder="Distance" required="required" /><br>
+      <input type="text" name="Type_of_order" placeholder="Type of Order" required="required" /><br>
+      <input type="text" name="Type_of_vehicle" placeholder="Type of Vehicle" required="required" /><br>
+      <input type="text" name="Festival" placeholder="Festival" required="required" /><br>
+      <input type="text" name="City" placeholder="City" required="required" /><br>
+      <input type="text" name="Delivery_city" placeholder="Delivery City" required="required" /><br>
+      <input type="text" name="Road_traffic_density" placeholder="Road Traffic Density" required="required" /><br>
+      <input type="text" name="Weather_conditions" placeholder="Weather Conditions" required="required" /><br>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+    <br>
+
+    <!-- Placeholder for displaying prediction result -->
+    {{ prediction_text }}
+
+  </div>
+</body>
+
+</html>
